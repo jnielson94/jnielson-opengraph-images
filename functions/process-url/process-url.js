@@ -9,6 +9,9 @@ cloudinary.config({
 exports.handler = async function (event, ctx) {
   const {queryStringParameters} = event
   console.log(queryStringParameters)
+  console.log(process.env.IMAGE_VERSION);
+  console.log(process.env.CLOUDINARY_KEY);
+  console.log(process.env.CLOUDINARY_SECRET)
   try {
     // https://res.cloudinary.com/sector/image/upload/v1583637123/og-images/img-1.png
     const imageUrl = cloudinary.url(
