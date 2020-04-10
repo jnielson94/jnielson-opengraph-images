@@ -13,7 +13,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "playwright-aws-lambda": "^0.4.0",
-    "playwright-core": "^0.13.0",
+    "playwright-core": "^0.11.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-textfit": "^1.1.0"
