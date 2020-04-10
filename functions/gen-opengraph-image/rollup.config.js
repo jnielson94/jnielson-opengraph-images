@@ -15,7 +15,9 @@ const config = {
             format: "iife"
         }
     ],
-    plugins: [resolve(), babel({
+    plugins: [resolve({
+        preferBuiltins: true
+    }), babel({
         exclude: "node_modules/**"
     }), commonjs({
         namedExports: {
