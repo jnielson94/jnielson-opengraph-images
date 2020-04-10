@@ -25,11 +25,12 @@ exports.handler = async function(event, ctx) {
   const tags = queryStringParameters.tags
     ? decodeURIComponent(queryStringParameters.tags).split(",")
     : [];
+    console.log(queryStringParameters);
   await page.addScriptTag({
     content: `
-  window.title = "${decodeURIComponent(queryStringParameters.title) || "No Title"}";
+  window.title = "${queryStringParameters.title ? decodeURIComponent(queryStringParameters.title) : "Jordan Nielson's Site"}";
   window.tags = ${JSON.stringify(tags)};
-  window.author = "${decodeURIComponent(queryStringParameters.author) || "@jnielson94"}";
+  window.author = "${queryStringParameters.author ? decodeURIComponent(queryStringParameters.author) : "@jnielson94"}";
   `
   });
   await page.addScriptTag({ content: script });
