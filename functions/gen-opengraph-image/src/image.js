@@ -56,7 +56,7 @@ export default function App() {
             max={200}
             min={24}
           >
-            Title of the blog post that is incredibly long!
+                       {window.title}
           </Textfit>
         </h1>
         <div
@@ -81,11 +81,11 @@ export default function App() {
               }
             }}
           >
-            <li>Tag 1</li>
-            <li>Tag 2</li>
-            <li>Tag 3</li>
+            {window.tags.map(tag => (
+              <li key={tag}>{tag}</li>
+            ))}
           </ul>
-          <span>@jnielson94</span>
+          <span>{window.author}</span>
         </div>
       </div>
     </div>
