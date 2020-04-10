@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "playwright-aws-lambda": "^0.4.0",
+    "playwright-core": "^0.13.0"
+  }
 }
