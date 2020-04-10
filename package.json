@@ -1,0 +1,20 @@
+{
+  "name": "jnielson-opengraph-images",
+  "version": "1.0.0",
+  "description": "Opengraph images based on https://egghead.io/playlists/building-an-opengraph-image-generation-api-with-cloudinary-netlify-functions-and-react-914e",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnielson94/jnielson-opengraph-images.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jnielson94/jnielson-opengraph-images/issues"
+  },
+  "homepage": "https://github.com/jnielson94/jnielson-opengraph-images#readme"
+}
