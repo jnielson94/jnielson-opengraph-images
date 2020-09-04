@@ -11,7 +11,7 @@ const config = {
     input: "src/image.js",
     output: [
         {
-            file: "src/image-out.js",
+            file: "image.js",
             format: "iife",
             name: "image"
         }
