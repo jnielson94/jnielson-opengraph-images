@@ -1,4 +1,4 @@
-(function () {
+var image = (function () {
   'use strict';
 
   function _inheritsLoose(subClass, superClass) {
@@ -3408,7 +3408,7 @@
       },
       max: 200,
       min: 24
-    }, "Title of the blog post that is incredibly long!")), jsx("div", {
+    }, window.title)), jsx("div", {
       css: {
         color: "#F0FAEB",
         display: "flex",
@@ -3428,7 +3428,9 @@
           }
         }
       }
-    }, jsx("li", null, "Tag 1"), jsx("li", null, "Tag 2"), jsx("li", null, "Tag 3")), jsx("span", null, "@jnielson94"))));
+    }, window.tags.map(tag => jsx("li", {
+      key: tag
+    }, tag))), jsx("span", null, window.author))));
   }
   reactDom_6(jsx(App, null), document.getElementById("corgi"));
 

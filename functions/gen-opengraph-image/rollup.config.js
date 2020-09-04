@@ -12,7 +12,8 @@ const config = {
     output: [
         {
             file: "image.js",
-            format: "iife"
+            format: "iife",
+            name: "image"
         }
     ],
     plugins: [resolve({
