@@ -21,7 +21,7 @@ exports.handler = async function (event, ctx) {
         custom_pre_function: {
           function_type: 'remote',
           source: 
-            `https://images.jln.codes/.netlify/functions/gen-opengraph-image?${qs.stringify(
+            `https://jordans-images.netlify.app/.netlify/functions/gen-opengraph-image?${qs.stringify(
               queryStringParameters,
             )}`,
           
