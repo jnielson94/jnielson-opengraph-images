@@ -12,20 +12,23 @@ exports.handler = async function (event, ctx) {
 
   try {
     // https://res.cloudinary.com/sector/image/upload/v1583637123/og-images/img-1.png
-    const imageUrl = cloudinary.url(
-      `${process.env.IMAGE_VERSION}/og-images/transparent.png`,
-      {
-        // resouce_type: "raw"
-        sign_url: true,
-        secure: true,
-        custom_pre_function: {
-          function_type: "remote",
-          source: `https://jordans-images.netlify.app/.netlify/functions/gen-opengraph-image?${qs.stringify(
-            queryStringParameters
-          )}`,
-        },
-      }
-    );
+    const transparentURL = `${process.env.IMAGE_VERSION}/og-images/transparent.png`;
+    const baseURL =
+      process.env.GEN_OPENGRAPH_IMAGE_BASE_URL ||
+      "https://jordans-images.netlify.app/.netlify/functions/gen-opengraph-image";
+    console.log("URLs: ", { transparentURL, baseURL });
+    const prefunction = `${baseURL}?${qs.stringify(queryStringParameters)}`;
+    const prefetched = await fetch(prefunction); // Prefetch to get the function warm before cloudinary call
+    console.log(prefetched.status, prefetched.headers);
+    const imageUrl = cloudinary.url(transparentURL, {
+      // resouce_type: "raw"
+      sign_url: true,
+      secure: true,
+      custom_pre_function: {
+        function_type: "remote",
+        source: prefunction,
+      },
+    });
 
     console.log({
       params: `${qs.stringify(queryStringParameters)}`,
