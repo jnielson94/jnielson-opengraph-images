@@ -5,29 +5,26 @@
   "main": "gen-opengraph-image.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "playwright-aws-lambda": "^0.4.0",
-    "playwright-core": "^0.11.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "@emotion/react": "^11.7.0",
+    "@sparticuz/chromium": "^141.0.0",
+    "playwright-core": "^1.17.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-textfit": "^1.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
-    "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "@rollup/plugin-replace": "^2.3.1",
-    "rollup": "^2.4.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-globals": "^1.4.0"
+    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-replace": "^6.0.3",
+    "rollup": "^4.53.2"
   }
 }

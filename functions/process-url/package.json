@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cloudinary": "^1.21.0"
+    "cloudinary": "^1.41.3"
   }
 }
