@@ -56,14 +56,14 @@ exports.handler = async function (event, ctx) {
 
   const screenshotBuffer = await page.screenshot({ clip: boundingRect });
   await browser.close();
-  const contentLength = screenshotBuffer.length.toString();
+  const contentLength = screenshotBuffer.toString("base64").length.toString();
   console.log({ contentLength });
   return {
     isBase64Encoded: true,
     statusCode: 200,
     headers: {
       "Content-Type": "image/png",
-      "Content-Length": screenshotBuffer.length.toString(),
+      "Content-Length": screenshotBuffer.toString("base64").length.toString(),
     },
     body: screenshotBuffer.toString("base64"),
   };

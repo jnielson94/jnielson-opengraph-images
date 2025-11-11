@@ -25,7 +25,6 @@ exports.handler = async function (event, ctx) {
         function_type: "remote",
         source: `${baseURL}?${qs.stringify(queryStringParameters)}`,
       },
-      fetch_format: "png",
     });
 
     console.log({
