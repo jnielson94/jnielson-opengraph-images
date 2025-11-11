@@ -4,7 +4,6 @@ import Textfit from "react-textfit";
 import { render } from "react-dom";
 
 export default function App() {
-  console.log("Rendering", window.title);
   return (
     <div
       css={{
