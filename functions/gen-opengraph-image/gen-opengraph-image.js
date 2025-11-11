@@ -1,9 +1,13 @@
-const playwright = require("playwright-aws-lambda");
+const { chromium: playwright } = require("playwright-core");
+const chromium = require("@sparticuz/chromium");
 const fs = require("fs");
 const script = fs.readFileSync("./src/image.js", "utf-8");
 
 exports.handler = async function (event, ctx) {
-  const browser = await playwright.launchChromium();
+  const browser = await playwright.launch({
+    args: chromium.args,
+    executablePath: await chromium.executablePath(),
+  });
   const context = await browser.newContext();
   const page = await context.newPage();
   page.setViewportSize({
