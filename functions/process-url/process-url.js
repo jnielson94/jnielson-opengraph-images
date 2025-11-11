@@ -24,7 +24,7 @@ exports.handler = async function (event, ctx) {
             queryStringParameters
           )}`,
         },
-        format: "png",
+        fetch_format: "png",
       }
     );
 
