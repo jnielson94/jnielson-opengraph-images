@@ -17,13 +17,16 @@ exports.handler = async function (event, ctx) {
       process.env.GEN_OPENGRAPH_IMAGE_BASE_URL ||
       "https://jordans-images.netlify.app/.netlify/functions/gen-opengraph-image";
     console.log("URLs: ", { transparentURL, baseURL });
+    const prefunction = `${baseURL}?${qs.stringify(queryStringParameters)}`;
+    const prefetched = await fetch(prefunction); // Prefetch to get the function warm before cloudinary call
+    console.log(prefetched.status, prefetched.headers);
     const imageUrl = cloudinary.url(transparentURL, {
       // resouce_type: "raw"
       sign_url: true,
       secure: true,
       custom_pre_function: {
         function_type: "remote",
-        source: `${baseURL}?${qs.stringify(queryStringParameters)}`,
+        source: prefunction,
       },
     });
 
